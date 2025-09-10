@@ -3,74 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Fancy Menu</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #fc466b 0%, #3f5efb 100%);
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .card {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-        }
-
-        .card-header {
-            background-color: #6c5ce7;
-            color: #fff;
-            font-size: 1.5rem;
-            text-align: center;
-            padding: 1.5rem;
-            border-bottom: none;
-        }
-
-        .list-group-item {
-            transition: all 0.3s ease;
-            font-size: 1.2rem;
-        }
-
-        .list-group-item:hover {
-            background-color: #a29bfe;
-            color: #fff;
-            transform: scale(1.05);
-        }
-    </style>
+    <title>My Personal Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="card text-center">
-        <div class="card-header">
-            Fancy Menu
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                <a href="https://contact.github.io" target="_blank" class="text-dark text-decoration-none">
-                    Contact Me
-                </a>
-            </li>
-            <li class="list-group-item">
-                <a href="https://about.github.io" target="_blank" class="text-dark text-decoration-none">
-                    About Me
-                </a>
-            </li>
-            <li class="list-group-item">
-                <a href="https://blog.github.io" target="_blank" class="text-dark text-decoration-none">
-                    My Blog
-                </a>
-            </li>
-        </ul>
-    </div>
+    <header>
+        <h1>Welcome to [Your Name]'s Page</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Role: [Your Role]</p>
+        <p>I am passionate about [area of interest]. I enjoy working on projects related to [related field or hobby].</p>
+    </section>
+
+    <section id="blog">
+        <h2>Blog</h2>
+        <p>Coming soon!</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>GitHub: <a href="https://github.com/your-github" target="_blank">your-github</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 [Your Name]. All rights reserved.</p>
+    </footer>
 </body>
 </html>
