@@ -1,0 +1,250 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!--
+    Monument & Muse  +  INFRAARTISTS Morse ring
+    ─────────────────────────────────────────────
+    Outer ring  r=97  (gradient stroke)
+    Morse band  r=89.5 (dots & dashes, INFRAARTISTS)
+    Separator   r=82  (faint guide line)
+    Artwork     inside r=82  (column, mountain, brushstroke)
+
+    Morse key:
+      I ··   N –·   F ··–·   R ·–·
+      A ·–   R ·–·  T –      I ··
+      S ···  T –    S ···
+  -->
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#00ff88"/>
+    </linearGradient>
+    <linearGradient id="gv" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#00ff88"/>
+    </linearGradient>
+    <radialGradient id="aurora" cx="50%" cy="62%" r="52%">
+      <stop offset="0%"   stop-color="#00d4ff" stop-opacity="0.16"/>
+      <stop offset="60%"  stop-color="#00ff88" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0.00"/>
+    </radialGradient>
+    <!-- glow for apex & paint dots -->
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- softer glow for Morse dots -->
+    <filter id="mglow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- clip artwork to inner circle -->
+    <clipPath id="inner">
+      <circle cx="100" cy="100" r="81"/>
+    </clipPath>
+  </defs>
+
+  <!-- ══════════════════════════════════════
+       BACKGROUND
+  ══════════════════════════════════════ -->
+  <circle cx="100" cy="100" r="98" fill="#060610"/>
+
+  <!-- aurora glow -->
+  <circle cx="100" cy="100" r="81" fill="url(#aurora)"/>
+
+  <!-- subtle grid (clipped to artwork area) -->
+  <g clip-path="url(#inner)" opacity="0.04" stroke="#00d4ff" stroke-width="1">
+    <line x1="0"   y1="50"  x2="200" y2="50"/>
+    <line x1="0"   y1="100" x2="200" y2="100"/>
+    <line x1="0"   y1="150" x2="200" y2="150"/>
+    <line x1="50"  y1="0"   x2="50"  y2="200"/>
+    <line x1="100" y1="0"   x2="100" y2="200"/>
+    <line x1="150" y1="0"   x2="150" y2="200"/>
+  </g>
+
+  <!-- ── Artist brushstroke (diagonal, translucent) ── -->
+  <path d="M 24,174 C 58,138 108,79 178,30"
+        stroke="url(#g)" stroke-width="20" stroke-linecap="round"
+        fill="none" opacity="0.07" clip-path="url(#inner)"/>
+  <path d="M 24,171 C 58,135 108,76 178,27"
+        stroke="url(#g)" stroke-width="5"  stroke-linecap="round"
+        fill="none" opacity="0.17" clip-path="url(#inner)"/>
+
+  <!-- ══════════════════════════════════════
+       "I" — Classical fluted column
+  ══════════════════════════════════════ -->
+  <!-- cornice (top cap) -->
+  <rect x="43" y="55" width="28" height="6"  rx="1.5" fill="url(#g)"/>
+  <!-- frieze -->
+  <rect x="46" y="61" width="22" height="3.5" rx="1"  fill="url(#g)" opacity="0.6"/>
+  <!-- shaft — very slightly tapered -->
+  <polygon points="49,64.5 65,64.5 66,138 48,138" fill="url(#g)"/>
+  <!-- flutes -->
+  <line x1="53" y1="64.5" x2="52" y2="138" stroke="#060610" stroke-width="1.4" opacity="0.38"/>
+  <line x1="57" y1="64.5" x2="57" y2="138" stroke="#060610" stroke-width="1.4" opacity="0.38"/>
+  <line x1="62" y1="64.5" x2="61" y2="138" stroke="#060610" stroke-width="1.4" opacity="0.38"/>
+  <!-- base platform -->
+  <rect x="43" y="138" width="28" height="5"  rx="1.5" fill="url(#g)"/>
+  <!-- stylobate (wider foot) -->
+  <rect x="40" y="143" width="34" height="5"  rx="1.5" fill="url(#g)" opacity="0.65"/>
+
+  <!-- ══════════════════════════════════════
+       "A" — Mountain / pyramid
+  ══════════════════════════════════════ -->
+  <!-- left structural beam -->
+  <polygon points="122,58 130,58 107,148 98,148"  fill="url(#gv)"/>
+  <!-- right structural beam -->
+  <polygon points="128,58 136,58 157,148 148,148" fill="url(#gv)"/>
+  <!-- crossbar / beam -->
+  <rect x="105" y="111" width="45" height="7" rx="2" fill="url(#g)"/>
+  <!-- apex triangle — glows -->
+  <polygon points="129,46 136,58 121,58" fill="url(#g)" filter="url(#glow)"/>
+  <!-- inner depth shadow -->
+  <polygon points="129,58 120,87 138,87" fill="#060610" opacity="0.26"/>
+
+  <!-- paint-splatter dots -->
+  <circle cx="161" cy="44" r="2.8" fill="#00d4ff" opacity="0.45" filter="url(#glow)"/>
+  <circle cx="169" cy="59" r="1.8" fill="#00ff88" opacity="0.35"/>
+  <circle cx="156" cy="68" r="1.4" fill="#00d4ff" opacity="0.50"/>
+  <circle cx="36"  cy="44" r="2.3" fill="#00ff88" opacity="0.38" filter="url(#glow)"/>
+  <circle cx="28"  cy="33" r="1.4" fill="#00d4ff" opacity="0.45"/>
+  <circle cx="42"  cy="34" r="1.8" fill="#00ff88" opacity="0.30"/>
+
+  <!-- ══════════════════════════════════════
+       RING SEPARATORS
+  ══════════════════════════════════════ -->
+  <!-- inner separator between artwork & Morse band -->
+  <circle cx="100" cy="100" r="82" fill="none"
+          stroke="url(#g)" stroke-width="0.8" opacity="0.30"/>
+  <!-- outer border -->
+  <circle cx="100" cy="100" r="97" fill="none"
+          stroke="url(#g)" stroke-width="1.8"/>
+
+  <!-- ══════════════════════════════════════
+       MORSE CODE RING  —  INFRAARTISTS
+       r = 89.5,  centre = (100, 100)
+       Template dot:  <circle cx="100" cy="10.5" r="2.2"/>
+       Template dash: <rect x="95.5" y="8.5" w="9" h="4" rx="2"/>
+       Each wrapped in rotate(θ 100 100)
+       ──────────────────────────────────────
+       I  ··     θ =  3.0,  8.5
+       N  –·     θ = 20.7, 29.6
+       F  ··–·   θ = 41.7, 47.2, 55.9, 64.7
+       R  ·–·    θ = 76.8, 85.5, 94.3
+       A  ·–     θ =106.4,115.1
+       A  ·–     θ =127.2,135.9
+       R  ·–·    θ =148.0,156.7,165.5
+       T  –      θ =177.6
+       I  ··     θ =189.6,195.1
+       S  ···    θ =207.3,212.8,218.3
+       T  –      θ =230.3
+       S  ···    θ =242.4,247.9,253.4
+  ══════════════════════════════════════ -->
+
+  <!-- I  · · -->
+  <g transform="rotate(3.0 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+  <g transform="rotate(8.5 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+
+  <!-- N  – · -->
+  <g transform="rotate(20.7 100 100)">
+    <rect x="95.5" y="8.5" width="9" height="4" rx="2" fill="url(#g)"/>
+  </g>
+  <g transform="rotate(29.6 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+
+  <!-- F  · · – · -->
+  <g transform="rotate(41.7 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+  <g transform="rotate(47.2 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+  <g transform="rotate(55.9 100 100)">
+    <rect x="95.5" y="8.5" width="9" height="4" rx="2" fill="url(#g)"/>
+  </g>
+  <g transform="rotate(64.7 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+
+  <!-- R  · – · -->
+  <g transform="rotate(76.8 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+  <g transform="rotate(85.5 100 100)">
+    <rect x="95.5" y="8.5" width="9" height="4" rx="2" fill="url(#g)"/>
+  </g>
+  <g transform="rotate(94.3 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+
+  <!-- A  · – -->
+  <g transform="rotate(106.4 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+  <g transform="rotate(115.1 100 100)">
+    <rect x="95.5" y="8.5" width="9" height="4" rx="2" fill="url(#g)"/>
+  </g>
+
+  <!-- A  · – -->
+  <g transform="rotate(127.2 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+  <g transform="rotate(135.9 100 100)">
+    <rect x="95.5" y="8.5" width="9" height="4" rx="2" fill="url(#g)"/>
+  </g>
+
+  <!-- R  · – · -->
+  <g transform="rotate(148.0 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+  <g transform="rotate(156.7 100 100)">
+    <rect x="95.5" y="8.5" width="9" height="4" rx="2" fill="url(#g)"/>
+  </g>
+  <g transform="rotate(165.5 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+
+  <!-- T  – -->
+  <g transform="rotate(177.6 100 100)">
+    <rect x="95.5" y="8.5" width="9" height="4" rx="2" fill="url(#g)"/>
+  </g>
+
+  <!-- I  · · -->
+  <g transform="rotate(189.6 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+  <g transform="rotate(195.1 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+
+  <!-- S  · · · -->
+  <g transform="rotate(207.3 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+  <g transform="rotate(212.8 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+  <g transform="rotate(218.3 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+
+  <!-- T  – -->
+  <g transform="rotate(230.3 100 100)">
+    <rect x="95.5" y="8.5" width="9" height="4" rx="2" fill="url(#g)"/>
+  </g>
+
+  <!-- S  · · · -->
+  <g transform="rotate(242.4 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+  <g transform="rotate(247.9 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+  <g transform="rotate(253.4 100 100)">
+    <circle cx="100" cy="10.5" r="2.2" fill="url(#g)" filter="url(#mglow)"/>
+  </g>
+
+</svg>
