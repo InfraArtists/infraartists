@@ -1,401 +1,1018 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Infrastructure Artists</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InfraArtists | DevOps & Cloud Consultancy</title>
+  <meta name="description" content="Expert DevOps consultancy — Kubernetes, CI/CD, cloud infrastructure, observability, and automation." />
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+  <!-- Tailwind CSS (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-				<!-- Header -->
-					<header id="header">
-						<!-- <div class="logo">
-							<span class="icon fa-gem"></span>
-						</div> -->
-						<div class="content">
-							<div class="inner">
-								<h1>Infrastructure Artists</h1>
-								<p>Here is all of my experience in Linux, Automantion, CICD, Cloud, IaC and many more.</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
-								<li><a href="#blog">Blog</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+  <!-- DevIcons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
-				<!-- Main -->
-					<div id="main">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">Intro</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-							</article>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">Work</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
-							</article>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'cb': '#00d4ff',   /* cyber blue  */
+            'cg': '#00ff88',   /* cyber green */
+            'd9': '#080812',
+            'd8': '#0d0d1f',
+            'd7': '#12122a',
+            'd6': '#1a1a3e',
+            'db': '#2d2d5a',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+        },
+      },
+    }
+  </script>
 
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
-							</article>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
 
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
-                        <!-- Blog -->
-                        <article id="blog">
-                            <h2 class="major">Blog</h2>
-                            <span class="image main"><img src="images/pic04.jpg" alt="" /></span>
-                            <p>My documents about Infrastructure, Cloud, Linux and DevOps</p>
-                            <ul>
-                                <li>
-                                    <strong>Linux</strong>
-                                    <ul>
-										<li><a href="https://github.com/InfraArtists/DevOps/blob/main/01-linux/lpic/00-Advantages_and_disadvantages_of_Linux_Operating_System.md">linux advantages</a></li>
-										<li><a href="#">linux kernel</a></li>
-                                        <li><a href="#">linux command</a></li>
-                                        <li><a href="https://github.com/InfraArtists/DevOps/blob/main/01-linux/lpic/03-File_editing_operations_using_vi.md">vim</a></li>
-                                        <li><a href="#">tmux</a></li>
-                                        <li><a href="#">lvm</a></li>
-                                        <li><a href="#">ssh</a></li>
-                                        <li><a href="#">http</a></li>
-                                        <li><a href="#">nginx</a></li>
-                                        <!-- Add more Linux topics as needed -->
-                                    </ul>
-                                </li>
-                                <li>
-                                    <strong>Git</strong>
-                                    <ul>
-                                        <li><a href="#">git command</a></li>
-                                        <li><a href="#">git branch</a></li>
-                                        <li><a href="#">git merge</a></li>
-                                        <li><a href="#">git rebase</a></li>
-                                        <li><a href="#">merge request</a></li>
-                                        <!-- Add more Git topics as needed -->
-                                    </ul>
-                                </li>
-                                <li>
-                                    <strong>Docker</strong>
-                                    <ul>
-                                        <li><a href="https://github.com/infra/devops/docker/01-image.md">docker images</a></li>
-                                        <li><a href="#">docker volume</a></li>
-                                        <li><a href="#">docker network</a></li>
-                                        <li><a href="#">docker container</a></li>
-                                        <!-- Add more Docker topics as needed -->
-                                    </ul>
-                                </li>
-                            </ul>
-                        </article>
+    body { background: #080812; color: #e2e8f0; font-family: 'Inter', sans-serif; }
 
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #080812; }
+    ::-webkit-scrollbar-thumb { background: #00d4ff; border-radius: 3px; }
 
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(0,212,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
+    .grad-text {
+      background: linear-gradient(135deg, #00d4ff, #00ff88);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
+    /* animated gradient border on hover */
+    .anim-border { position: relative; }
+    .anim-border::before {
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, #00d4ff, transparent 50%, #00ff88);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .anim-border:hover::before { opacity: 1; }
 
-								<section>
-									<h3 class="major">Lists</h3>
+    .nav-blur {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
 
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+    .cat-head::before {
+      content: '';
+      display: inline-block;
+      width: 4px; height: 1.1em;
+      background: linear-gradient(#00d4ff, #00ff88);
+      margin-right: .65rem;
+      border-radius: 2px;
+      vertical-align: middle;
+    }
 
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+    .scard, .bcard {
+      transition: transform .3s, box-shadow .3s, border-color .3s;
+    }
+    .scard:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 28px rgba(0,212,255,.12);
+    }
+    .bcard:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 32px rgba(0,212,255,.10);
+    }
 
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      background: #1a1a3e;
+      border-radius: 4px;
+      font-size: .7rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: #00d4ff;
+    }
 
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
+    /* fade-in-up for cards via JS */
+    .reveal { opacity: 0; transform: translateY(22px); }
+    .revealed { opacity: 1 !important; transform: translateY(0) !important; transition: opacity .55s ease, transform .55s ease; }
 
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
+    /* line-clamp fallback */
+    .lc3 {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
 
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
+<!-- ══════════════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════════ -->
+<nav id="nav" class="fixed top-0 inset-x-0 z-50 nav-blur bg-[#080812]/80 border-b border-[#2d2d5a]/40 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
 
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
+    <!-- logo -->
+    <a href="#" class="flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded bg-gradient-to-br from-[#00d4ff] to-[#00ff88] grid place-items-center">
+        <i class="fas fa-layer-group text-[#080812] text-sm"></i>
+      </div>
+      <span class="font-mono font-bold text-lg text-white">Infra<span class="grad-text">Artists</span></span>
+    </a>
 
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
+    <!-- desktop links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#hero"     class="text-sm text-slate-400 hover:text-[#00d4ff] transition-colors">Home</a>
+      <a href="#services" class="text-sm text-slate-400 hover:text-[#00d4ff] transition-colors">Services</a>
+      <a href="#blog"     class="text-sm text-slate-400 hover:text-[#00d4ff] transition-colors">Blog</a>
+      <a href="#contact"  class="text-sm text-slate-400 hover:text-[#00d4ff] transition-colors">Contact</a>
+      <a href="#contact"  class="text-sm px-4 py-2 rounded border border-[#00d4ff] text-[#00d4ff] hover:bg-[#00d4ff] hover:text-[#080812] transition-all font-medium">
+        Get in Touch
+      </a>
+    </div>
 
-							</article>
+    <!-- hamburger -->
+    <button id="ham" class="md:hidden text-slate-400 hover:text-white">
+      <i id="ham-icon" class="fas fa-bars text-xl"></i>
+    </button>
+  </div>
 
-					</div>
+  <!-- mobile drawer -->
+  <div id="mob-menu" class="hidden md:hidden bg-[#0d0d1f] border-t border-[#2d2d5a]/40 px-4 py-4 flex flex-col gap-4">
+    <a href="#hero"     class="text-slate-400 hover:text-[#00d4ff] text-sm" onclick="closeMob()">Home</a>
+    <a href="#services" class="text-slate-400 hover:text-[#00d4ff] text-sm" onclick="closeMob()">Services</a>
+    <a href="#blog"     class="text-slate-400 hover:text-[#00d4ff] text-sm" onclick="closeMob()">Blog</a>
+    <a href="#contact"  class="text-slate-400 hover:text-[#00d4ff] text-sm" onclick="closeMob()">Contact</a>
+  </div>
+</nav>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+<!-- ══════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════ -->
+<section id="hero" class="relative min-h-screen flex items-center justify-center grid-bg overflow-hidden">
+  <!-- bg glows -->
+  <div class="absolute top-1/4 left-1/4 w-[28rem] h-[28rem] bg-[#00d4ff]/5 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#00ff88]/5 rounded-full blur-3xl pointer-events-none"></div>
 
-			</div>
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 text-center pt-20 pb-12">
+    <!-- badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00d4ff]/30 bg-[#00d4ff]/5 text-[#00d4ff] text-sm font-mono mb-10">
+      <span class="w-2 h-2 rounded-full bg-[#00ff88] animate-pulse"></span>
+      Available for new projects
+    </div>
 
-		<!-- BG -->
-			<div id="bg"></div>
+    <h1 class="text-5xl sm:text-7xl font-black mb-6 leading-tight tracking-tight">
+      <span class="text-white">Infrastructure</span><br/>
+      <span class="grad-text" style="text-shadow:0 0 40px rgba(0,212,255,.3)">as Art</span>
+    </h1>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+      Expert DevOps consultancy specialising in cloud infrastructure, Kubernetes orchestration,
+      CI/CD pipelines, and modern observability stacks.
+    </p>
 
-	</body>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+      <a href="#services" class="px-8 py-3.5 rounded bg-gradient-to-r from-[#00d4ff] to-[#0096b3] text-[#080812] font-bold hover:opacity-90 transition-opacity">
+        Explore Services
+      </a>
+      <a href="#contact" class="px-8 py-3.5 rounded border border-[#2d2d5a] text-slate-300 hover:border-[#00d4ff] hover:text-[#00d4ff] transition-all">
+        Let's Talk
+      </a>
+    </div>
+
+    <!-- tech pills -->
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="px-3 py-1 rounded-full bg-[#12122a] border border-[#2d2d5a] text-xs text-slate-400 font-mono">Kubernetes</span>
+      <span class="px-3 py-1 rounded-full bg-[#12122a] border border-[#2d2d5a] text-xs text-slate-400 font-mono">Terraform</span>
+      <span class="px-3 py-1 rounded-full bg-[#12122a] border border-[#2d2d5a] text-xs text-slate-400 font-mono">Ansible</span>
+      <span class="px-3 py-1 rounded-full bg-[#12122a] border border-[#2d2d5a] text-xs text-slate-400 font-mono">Docker</span>
+      <span class="px-3 py-1 rounded-full bg-[#12122a] border border-[#2d2d5a] text-xs text-slate-400 font-mono">Prometheus</span>
+      <span class="px-3 py-1 rounded-full bg-[#12122a] border border-[#2d2d5a] text-xs text-slate-400 font-mono">Grafana</span>
+      <span class="px-3 py-1 rounded-full bg-[#12122a] border border-[#2d2d5a] text-xs text-slate-400 font-mono">OpenStack</span>
+      <span class="px-3 py-1 rounded-full bg-[#12122a] border border-[#2d2d5a] text-xs text-slate-400 font-mono">GitLab CI</span>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <a href="#services" class="text-slate-600 hover:text-[#00d4ff] transition-colors">
+      <i class="fas fa-chevron-down text-xl"></i>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     SERVICES
+══════════════════════════════════════════════════ -->
+<section id="services" class="py-24 bg-[#0d0d1f] relative">
+  <div class="absolute inset-0 grid-bg opacity-50"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- header -->
+    <div class="text-center mb-16">
+      <span class="font-mono text-[#00d4ff] text-sm tracking-widest uppercase">What I Do</span>
+      <h2 class="text-4xl sm:text-5xl font-bold text-white mt-3 mb-4">Services</h2>
+      <p class="text-slate-400 max-w-xl mx-auto">From bare-metal to cloud-native — end-to-end infrastructure engineering and automation.</p>
+    </div>
+
+    <!-- ── 1. Orchestration & Containers ── -->
+    <div class="mb-14">
+      <h3 class="text-xl font-bold text-white mb-6 cat-head">Orchestration &amp; Containers</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Kubernetes Cluster Setup</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Production-grade K8s deployment, maintenance, scaling, and RBAC hardening on any cloud or bare-metal.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">k8s</span><span class="tag">helm</span><span class="tag">kustomize</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Application Dockerization</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Multi-stage Dockerfiles, image optimisation, Compose stacks, and private registry management.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">docker</span><span class="tag">compose</span><span class="tag">registry</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── 2. Cloud & Infrastructure ── -->
+    <div class="mb-14">
+      <h3 class="text-xl font-bold text-white mb-6 cat-head">Cloud &amp; Infrastructure</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/openstack/openstack-original.svg" alt="OpenStack" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">OpenStack Deployment</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Full private cloud with Nova, Neutron, Cinder, Keystone. Kolla-Ansible based automation.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">openstack</span><span class="tag">kolla</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.simpleicons.org/ceph/EF5C55" alt="Ceph" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Storage with Ceph</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Distributed, fault-tolerant storage clusters. RBD, CephFS, and S3-compatible object storage.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">ceph</span><span class="tag">rook</span><span class="tag">s3</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.simpleicons.org/proxmox/E57000" alt="Proxmox" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Virtualisation Platforms</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Proxmox VE, oVirt, and OLVM deployment and HA cluster management. VM lifecycle automation.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">proxmox</span><span class="tag">ovirt</span><span class="tag">olvm</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── 3. Database Management ── -->
+    <div class="mb-14">
+      <h3 class="text-xl font-bold text-white mb-6 cat-head">Database Management</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">PostgreSQL</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">HA clusters with Patroni, backup with pgBackRest, connection pooling with PgBouncer, and query optimisation.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">patroni</span><span class="tag">pgbackrest</span><span class="tag">pgbouncer</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original.svg" alt="MariaDB" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">MariaDB</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Galera Cluster for multi-master replication, MaxScale proxy, and automated failover.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">galera</span><span class="tag">maxscale</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">MongoDB</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Replica set and sharded cluster setup, Atlas migration, indexing strategies, and performance tuning.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">replica-set</span><span class="tag">sharding</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.simpleicons.org/cockroachdb/6933FF" alt="CockroachDB" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">CockroachDB</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Geo-distributed SQL with multi-region replication, automated backups, and cluster management.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">distributed-sql</span><span class="tag">geo-partition</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.simpleicons.org/scylladb/53C7E3" alt="ScyllaDB" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">ScyllaDB</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">High-throughput NoSQL clusters on bare-metal or Kubernetes using the Scylla Operator.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">nosql</span><span class="tag">scylla-operator</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── 4. CI/CD & Automation ── -->
+    <div class="mb-14">
+      <h3 class="text-xl font-bold text-white mb-6 cat-head">CI/CD &amp; Automation</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">GitLab CI/CD</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Multi-stage pipelines, K8s runners, self-hosted GitLab, and GitOps with ArgoCD.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">gitlab-ci</span><span class="tag">argocd</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="w-7 h-7" style="filter:invert(1);">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">GitHub Actions</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Reusable workflows, composite actions, self-hosted runners, and secure secret management.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">actions</span><span class="tag">runners</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" alt="Azure DevOps" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Azure DevOps</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">YAML pipeline templates, Azure Boards integration, and AKS deployment automation.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">azure-pipelines</span><span class="tag">aks</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bitbucket/bitbucket-original.svg" alt="Bitbucket" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Bitbucket Pipelines</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Custom runners, Jira integration, and deployment automation to cloud environments.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">pipelines</span><span class="tag">jira</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg" alt="Ansible" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Ansible Automation</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Idempotent playbooks, custom roles, AWX/AAP setup, and full infrastructure automation at scale.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">playbooks</span><span class="tag">awx</span><span class="tag">aap</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Terraform / IaC</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Modular Terraform code, remote state management, Atlantis automation, and drift detection.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">terraform</span><span class="tag">opentofu</span><span class="tag">atlantis</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── 5. Monitoring & Observability ── -->
+    <div class="mb-14">
+      <h3 class="text-xl font-bold text-white mb-6 cat-head">Monitoring &amp; Observability</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] flex items-center justify-center gap-1">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" alt="Prometheus" class="w-5 h-5">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Grafana" class="w-5 h-5">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Prometheus &amp; Grafana</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Full metrics stack with kube-prometheus-stack, custom dashboards, recording rules, and alert routing.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">promql</span><span class="tag">alertmanager</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <!-- VM logo fallback to styled badge if CDN misses -->
+              <img src="https://cdn.simpleicons.org/victoriametrics/621773" alt="VictoriaMetrics" class="w-7 h-7"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div style="display:none" class="w-7 h-7 rounded bg-purple-700 grid place-items-center text-white text-xs font-bold">VM</div>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">VictoriaMetrics</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Long-term metrics storage, VMAlert, VMAgent scraping, and cluster mode for high-cardinality data.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">vmagent</span><span class="tag">vmalert</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.simpleicons.org/zabbix/CC0000" alt="Zabbix" class="w-7 h-7"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div style="display:none" class="w-7 h-7 rounded bg-red-700 grid place-items-center text-white text-xs font-bold">ZX</div>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Zabbix</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Enterprise Zabbix deployment, custom templates, SNMP/JMX monitoring, and escalation policies.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">snmp</span><span class="tag">jmx</span><span class="tag">templates</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <i class="fas fa-bell text-[#00d4ff] text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Advanced Alerting</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Alert routing, deduplication, and on-call management with PagerDuty, OpsGenie, and Slack.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">pagerduty</span><span class="tag">opsgenie</span><span class="tag">slack</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── 6. Middleware & Third-party Apps ── -->
+    <div class="mb-14">
+      <h3 class="text-xl font-bold text-white mb-6 cat-head">Middleware &amp; Third-party Apps</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="Redis" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Redis</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Sentinel and Cluster mode, caching patterns, Keydb for threaded performance, and K8s operator.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">sentinel</span><span class="tag">cluster</span><span class="tag">keydb</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.simpleicons.org/rabbitmq/FF6600" alt="RabbitMQ" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">RabbitMQ</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">HA clusters, quorum queues, federation/shovel plugins, and Kubernetes operator deployments.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">amqp</span><span class="tag">quorum-queues</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.simpleicons.org/apachekafka/ffffff" alt="Kafka" class="w-7 h-7">
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Apache Kafka</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">KRaft-mode clusters, Kafka Connect, Schema Registry, and Strimzi operator for Kubernetes.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">strimzi</span><span class="tag">kraft</span><span class="tag">connect</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── 7. Security ── -->
+    <div>
+      <h3 class="text-xl font-bold text-white mb-6 cat-head">Security</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.simpleicons.org/pfsense/212121" alt="pfSense" class="w-7 h-7"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div style="display:none" class="w-7 h-7 rounded bg-blue-800 grid place-items-center text-white text-xs font-bold">pf</div>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">pfSense</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Open-source firewall with WireGuard/OpenVPN, Suricata IDS/IPS, and VLAN segmentation.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">wireguard</span><span class="tag">suricata</span><span class="tag">vlan</span>
+          </div>
+        </div>
+
+        <div class="scard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-[#1a1a3e] grid place-items-center">
+              <img src="https://cdn.simpleicons.org/opnsense/D94F00" alt="OPNsense" class="w-7 h-7"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div style="display:none" class="w-7 h-7 rounded bg-orange-700 grid place-items-center text-white text-xs font-bold">OPN</div>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">OPNsense</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Enterprise OPNsense with HAProxy, CrowdSec threat intelligence, and HA CARP failover.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">haproxy</span><span class="tag">crowdsec</span><span class="tag">carp</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     BLOG
+══════════════════════════════════════════════════ -->
+<section id="blog" class="py-24 bg-[#080812]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- header -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
+      <div>
+        <span class="font-mono text-[#00ff88] text-sm tracking-widest uppercase">Technical Writing</span>
+        <h2 class="text-4xl sm:text-5xl font-bold text-white mt-3">Blog</h2>
+        <p class="text-slate-400 mt-2 max-w-md">Deep dives into infrastructure, cloud-native patterns, and DevOps best practices.</p>
+      </div>
+      <a href="https://github.com/InfraArtists/DevOps" target="_blank" rel="noopener"
+         class="self-start sm:self-auto flex items-center gap-2 px-5 py-2.5 rounded border border-[#00ff88]/40 text-[#00ff88] text-sm hover:bg-[#00ff88]/10 transition-colors whitespace-nowrap">
+        <i class="fab fa-github"></i> All articles on GitHub
+      </a>
+    </div>
+
+    <!-- grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Post 1 -->
+      <article class="bcard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl overflow-hidden group">
+        <div class="relative h-44 bg-gradient-to-br from-[#1a1a3e] to-[#0d0d1f] grid place-items-center grid-bg overflow-hidden">
+          <div class="flex gap-4 items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="" class="w-14 h-14 opacity-80 group-hover:opacity-100 transition-opacity">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" alt="" class="w-10 h-10 opacity-60 group-hover:opacity-100 transition-opacity">
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="px-2 py-0.5 bg-[#00d4ff]/10 border border-[#00d4ff]/20 rounded text-xs text-[#00d4ff] font-mono">Kubernetes</span>
+            <span class="text-slate-500 text-xs font-mono">Jan 15, 2025</span>
+          </div>
+          <h3 class="font-bold text-white text-base mb-2 leading-snug group-hover:text-[#00d4ff] transition-colors">
+            Building a Production Kubernetes Monitoring Stack with kube-prometheus-stack
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4 lc3">
+            A step-by-step guide to deploying Prometheus, Grafana, and Alertmanager on Kubernetes with custom dashboards and production-ready alert rules.
+          </p>
+          <a href="https://github.com/InfraArtists/DevOps" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-sm text-[#00d4ff] hover:gap-3 transition-all">
+            Read More <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="bcard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl overflow-hidden group">
+        <div class="relative h-44 bg-gradient-to-br from-[#1a2a1a] to-[#0d1f0d] grid place-items-center grid-bg overflow-hidden">
+          <div class="flex gap-4 items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg" alt="" class="w-14 h-14 opacity-80 group-hover:opacity-100 transition-opacity">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="" class="w-10 h-10 opacity-60 group-hover:opacity-100 transition-opacity">
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="px-2 py-0.5 bg-[#00ff88]/10 border border-[#00ff88]/20 rounded text-xs text-[#00ff88] font-mono">IaC</span>
+            <span class="text-slate-500 text-xs font-mono">Feb 3, 2025</span>
+          </div>
+          <h3 class="font-bold text-white text-base mb-2 leading-snug group-hover:text-[#00ff88] transition-colors">
+            Ansible + Terraform: The Perfect IaC Combination for Cloud Infrastructure
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4 lc3">
+            Combining Terraform for infrastructure provisioning and Ansible for configuration management to achieve fully automated, reproducible environments.
+          </p>
+          <a href="https://github.com/InfraArtists/DevOps" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-sm text-[#00ff88] hover:gap-3 transition-all">
+            Read More <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Post 3 -->
+      <article class="bcard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl overflow-hidden group">
+        <div class="relative h-44 bg-gradient-to-br from-[#2a1a2a] to-[#1a0d1f] grid place-items-center grid-bg overflow-hidden">
+          <div class="flex gap-4 items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="" class="w-14 h-14 opacity-80 group-hover:opacity-100 transition-opacity">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="" class="w-10 h-10 opacity-60 group-hover:opacity-100 transition-opacity">
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="px-2 py-0.5 bg-purple-500/10 border border-purple-500/20 rounded text-xs text-purple-400 font-mono">CI/CD</span>
+            <span class="text-slate-500 text-xs font-mono">Mar 10, 2025</span>
+          </div>
+          <h3 class="font-bold text-white text-base mb-2 leading-snug group-hover:text-purple-400 transition-colors">
+            GitLab CI/CD: Zero-Downtime Deployments with Canary Releases on Kubernetes
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4 lc3">
+            Practical walkthrough of canary deployments using GitLab pipelines, Kubernetes, and feature flags — from a single runner to a full GitOps workflow.
+          </p>
+          <a href="https://github.com/InfraArtists/DevOps" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-sm text-purple-400 hover:gap-3 transition-all">
+            Read More <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Post 4 -->
+      <article class="bcard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl overflow-hidden group">
+        <div class="relative h-44 bg-gradient-to-br from-[#2a1a10] to-[#1a0d08] grid place-items-center grid-bg overflow-hidden">
+          <div class="flex gap-4 items-center">
+            <img src="https://cdn.simpleicons.org/ceph/EF5C55" alt="" class="w-14 h-14 opacity-80 group-hover:opacity-100 transition-opacity">
+            <img src="https://cdn.simpleicons.org/proxmox/E57000" alt="" class="w-10 h-10 opacity-60 group-hover:opacity-100 transition-opacity">
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="px-2 py-0.5 bg-orange-500/10 border border-orange-500/20 rounded text-xs text-orange-400 font-mono">Storage</span>
+            <span class="text-slate-500 text-xs font-mono">Apr 5, 2025</span>
+          </div>
+          <h3 class="font-bold text-white text-base mb-2 leading-snug group-hover:text-orange-400 transition-colors">
+            Ceph on Proxmox: Building a Hyper-Converged Infrastructure from Scratch
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4 lc3">
+            Complete guide to deploying a Ceph distributed storage cluster integrated with Proxmox VE for a resilient, hyper-converged private cloud.
+          </p>
+          <a href="https://github.com/InfraArtists/DevOps" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-sm text-orange-400 hover:gap-3 transition-all">
+            Read More <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Post 5 -->
+      <article class="bcard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl overflow-hidden group">
+        <div class="relative h-44 bg-gradient-to-br from-[#101a2a] to-[#081020] grid place-items-center grid-bg overflow-hidden">
+          <div class="flex gap-4 items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="" class="w-14 h-14 opacity-80 group-hover:opacity-100 transition-opacity">
+            <img src="https://cdn.simpleicons.org/cockroachdb/6933FF" alt="" class="w-10 h-10 opacity-60 group-hover:opacity-100 transition-opacity">
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="px-2 py-0.5 bg-blue-500/10 border border-blue-500/20 rounded text-xs text-blue-400 font-mono">Database</span>
+            <span class="text-slate-500 text-xs font-mono">Apr 20, 2025</span>
+          </div>
+          <h3 class="font-bold text-white text-base mb-2 leading-snug group-hover:text-blue-400 transition-colors">
+            PostgreSQL HA with Patroni: Automatic Failover That Actually Works
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4 lc3">
+            Setting up a production PostgreSQL cluster with Patroni, etcd, and HAProxy for sub-30-second automatic failover with zero application downtime.
+          </p>
+          <a href="https://github.com/InfraArtists/DevOps" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-sm text-blue-400 hover:gap-3 transition-all">
+            Read More <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Post 6 (coming soon) -->
+      <article class="bcard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl overflow-hidden group">
+        <div class="relative h-44 bg-gradient-to-br from-[#1a200a] to-[#101508] grid place-items-center grid-bg overflow-hidden">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="" class="w-16 h-16 opacity-80 group-hover:opacity-100 transition-opacity">
+        </div>
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="px-2 py-0.5 bg-yellow-500/10 border border-yellow-500/20 rounded text-xs text-yellow-400 font-mono">Linux</span>
+            <span class="text-slate-500 text-xs font-mono">Coming Soon</span>
+          </div>
+          <h3 class="font-bold text-white text-base mb-2 leading-snug group-hover:text-yellow-400 transition-colors">
+            Linux Performance Tuning: Kernel Parameters for High-Throughput Workloads
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4 lc3">
+            Deep dive into sysctl parameters, CPU governor settings, NUMA tuning, and network stack optimisation for production Linux servers.
+          </p>
+          <span class="inline-flex items-center gap-2 text-sm text-slate-500 font-mono">
+            <i class="fas fa-clock text-xs"></i> In progress
+          </span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════════════ -->
+<section id="contact" class="py-24 bg-[#0d0d1f] relative">
+  <div class="absolute inset-0 grid-bg opacity-30"></div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <span class="font-mono text-[#00d4ff] text-sm tracking-widest uppercase">Let's Build Together</span>
+    <h2 class="text-4xl sm:text-5xl font-bold text-white mt-3 mb-4">Get in Touch</h2>
+    <p class="text-slate-400 mb-12 max-w-lg mx-auto">Have a complex infrastructure challenge? Need a reliable DevOps partner? Let's talk.</p>
+
+    <!-- contact cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-12">
+      <a href="mailto:contact@infraartists.com"
+         class="group flex flex-col items-center gap-3 p-6 bg-[#12122a] border border-[#2d2d5a] rounded-xl hover:border-[#00d4ff]/50 transition-colors">
+        <div class="w-12 h-12 rounded-full bg-[#00d4ff]/10 grid place-items-center">
+          <i class="fas fa-envelope text-[#00d4ff] text-xl"></i>
+        </div>
+        <span class="text-white font-medium">Email</span>
+        <span class="text-slate-400 text-sm group-hover:text-[#00d4ff] transition-colors break-all">contact@infraartists.com</span>
+      </a>
+
+      <a href="https://github.com/InfraArtists" target="_blank" rel="noopener"
+         class="group flex flex-col items-center gap-3 p-6 bg-[#12122a] border border-[#2d2d5a] rounded-xl hover:border-[#00d4ff]/50 transition-colors">
+        <div class="w-12 h-12 rounded-full bg-[#00d4ff]/10 grid place-items-center">
+          <i class="fab fa-github text-[#00d4ff] text-xl"></i>
+        </div>
+        <span class="text-white font-medium">GitHub</span>
+        <span class="text-slate-400 text-sm group-hover:text-[#00d4ff] transition-colors">InfraArtists</span>
+      </a>
+
+      <a href="https://linkedin.com" target="_blank" rel="noopener"
+         class="group flex flex-col items-center gap-3 p-6 bg-[#12122a] border border-[#2d2d5a] rounded-xl hover:border-[#00d4ff]/50 transition-colors">
+        <div class="w-12 h-12 rounded-full bg-[#00d4ff]/10 grid place-items-center">
+          <i class="fab fa-linkedin-in text-[#00d4ff] text-xl"></i>
+        </div>
+        <span class="text-white font-medium">LinkedIn</span>
+        <span class="text-slate-400 text-sm group-hover:text-[#00d4ff] transition-colors">Connect with me</span>
+      </a>
+    </div>
+
+    <!-- form -->
+    <form id="contact-form" class="bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6 sm:p-8 text-left">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+        <div>
+          <label class="block text-sm text-slate-400 mb-2 font-mono">Name</label>
+          <input type="text" placeholder="Your name"
+                 class="w-full bg-[#080812] border border-[#2d2d5a] rounded-lg px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-[#00d4ff] transition-colors">
+        </div>
+        <div>
+          <label class="block text-sm text-slate-400 mb-2 font-mono">Email</label>
+          <input type="email" placeholder="your@email.com"
+                 class="w-full bg-[#080812] border border-[#2d2d5a] rounded-lg px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-[#00d4ff] transition-colors">
+        </div>
+      </div>
+      <div class="mb-5">
+        <label class="block text-sm text-slate-400 mb-2 font-mono">Message</label>
+        <textarea rows="4" placeholder="Tell me about your project..."
+                  class="w-full bg-[#080812] border border-[#2d2d5a] rounded-lg px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-[#00d4ff] transition-colors resize-none"></textarea>
+      </div>
+      <button id="submit-btn" type="submit"
+              class="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-[#00d4ff] to-[#0096b3] text-[#080812] font-bold rounded-lg hover:opacity-90 transition-opacity">
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════ -->
+<footer class="py-8 bg-[#080812] border-t border-[#2d2d5a]/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2.5">
+      <div class="w-6 h-6 rounded bg-gradient-to-br from-[#00d4ff] to-[#00ff88] grid place-items-center">
+        <i class="fas fa-layer-group text-[#080812] text-xs"></i>
+      </div>
+      <span class="font-mono text-sm text-slate-400">InfraArtists &copy; 2025</span>
+    </div>
+    <div class="flex items-center gap-6">
+      <a href="https://github.com/InfraArtists" target="_blank" rel="noopener" class="text-slate-500 hover:text-[#00d4ff] transition-colors">
+        <i class="fab fa-github text-lg"></i>
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-slate-500 hover:text-[#00d4ff] transition-colors">
+        <i class="fab fa-linkedin-in text-lg"></i>
+      </a>
+      <span class="text-slate-600 text-xs font-mono">infraartists.com</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════
+     JS
+══════════════════════════════════════════════════ -->
+<script>
+  // ── mobile menu ──
+  const ham = document.getElementById('ham');
+  const mobMenu = document.getElementById('mob-menu');
+  const hamIcon = document.getElementById('ham-icon');
+
+  ham.addEventListener('click', () => {
+    mobMenu.classList.toggle('hidden');
+    hamIcon.className = mobMenu.classList.contains('hidden')
+      ? 'fas fa-bars text-xl'
+      : 'fas fa-times text-xl';
+  });
+
+  function closeMob() {
+    mobMenu.classList.add('hidden');
+    hamIcon.className = 'fas fa-bars text-xl';
+  }
+
+  // ── smooth scroll for hash links ──
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  // ── scroll-reveal for cards ──
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 3) * 80}ms`;
+    io.observe(el);
+  });
+
+  // ── contact form mock submit ──
+  document.getElementById('contact-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = '✓ Message Sent!';
+    btn.style.background = 'linear-gradient(to right, #00ff88, #00b362)';
+    setTimeout(() => {
+      btn.textContent = 'Send Message';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  });
+</script>
+
+</body>
 </html>
