@@ -1076,25 +1076,32 @@
 
     <!-- form -->
     <form id="contact-form" class="bg-[#12122a] border border-[#2d2d5a] rounded-xl p-6 sm:p-8 text-left">
+      <!-- Web3Forms access key — replace with yours from https://web3forms.com -->
+      <input type="hidden" name="access_key" value="49f3a6e4-9c39-482f-92f4-1b6d9f638739">
+      <input type="hidden" name="subject" value="New message from infraartists.com">
+      <input type="hidden" name="from_name" value="InfraArtists Contact Form">
+      <input type="checkbox" name="botcheck" style="display:none">
+
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
         <div>
           <label class="block text-sm text-slate-400 mb-2 font-mono">Name</label>
-          <input type="text" placeholder="Your name"
+          <input type="text" name="name" placeholder="Your name" required
                  class="w-full bg-[#080812] border border-[#2d2d5a] rounded-lg px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-[#00d4ff] transition-colors">
         </div>
         <div>
           <label class="block text-sm text-slate-400 mb-2 font-mono">Email</label>
-          <input type="email" placeholder="your@email.com"
+          <input type="email" name="email" placeholder="your@email.com" required
                  class="w-full bg-[#080812] border border-[#2d2d5a] rounded-lg px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-[#00d4ff] transition-colors">
         </div>
       </div>
       <div class="mb-5">
         <label class="block text-sm text-slate-400 mb-2 font-mono">Message</label>
-        <textarea rows="4" placeholder="Tell me about your project..."
+        <textarea rows="4" name="message" placeholder="Tell me about your project..." required
                   class="w-full bg-[#080812] border border-[#2d2d5a] rounded-lg px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-[#00d4ff] transition-colors resize-none"></textarea>
       </div>
+      <div id="form-status" class="hidden mb-4 px-4 py-3 rounded-lg text-sm font-mono"></div>
       <button id="submit-btn" type="submit"
-              class="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-[#00d4ff] to-[#0096b3] text-[#080812] font-bold rounded-lg hover:opacity-90 transition-opacity">
+              class="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-[#00d4ff] to-[#0096b3] text-[#080812] font-bold rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed">
         Send Message
       </button>
     </form>
@@ -1169,17 +1176,38 @@
     io.observe(el);
   });
 
-  // ── contact form mock submit ──
-  document.getElementById('contact-form').addEventListener('submit', e => {
+  // ── contact form — Web3Forms ──
+  document.getElementById('contact-form').addEventListener('submit', async e => {
     e.preventDefault();
-    const btn = document.getElementById('submit-btn');
-    btn.textContent = '✓ Message Sent!';
-    btn.style.background = 'linear-gradient(to right, #00ff88, #00b362)';
-    setTimeout(() => {
-      btn.textContent = 'Send Message';
-      btn.style.background = '';
-      e.target.reset();
-    }, 3000);
+    const btn    = document.getElementById('submit-btn');
+    const status = document.getElementById('form-status');
+
+    btn.disabled    = true;
+    btn.textContent = 'Sending…';
+    status.className = 'hidden';
+
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body:    JSON.stringify(Object.fromEntries(new FormData(e.target))),
+      });
+      const json = await res.json();
+
+      if (json.success) {
+        status.textContent = '✓ Message sent! I\'ll get back to you soon.';
+        status.className   = 'mb-4 px-4 py-3 rounded-lg text-sm font-mono bg-[#00ff88]/10 border border-[#00ff88]/30 text-[#00ff88]';
+        e.target.reset();
+      } else {
+        throw new Error(json.message || 'Submission failed');
+      }
+    } catch (err) {
+      status.textContent = '✗ Failed to send: ' + err.message;
+      status.className   = 'mb-4 px-4 py-3 rounded-lg text-sm font-mono bg-red-500/10 border border-red-500/30 text-red-400';
+    }
+
+    btn.disabled    = false;
+    btn.textContent = 'Send Message';
   });
 </script>
 
