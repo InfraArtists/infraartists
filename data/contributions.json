@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-10T12:21:50Z",
+  "generated_at": "2026-05-10T13:24:35Z",
   "username": "infraartists",
-  "count": 9,
+  "count": 4,
   "contributions": [
     {
       "title": "[prometheus-postgres-exporter] require datasource password explicitly",
@@ -46,61 +46,6 @@
       "stars": 1365,
       "language": "Mustache",
       "merged_at": "2026-05-01T05:46:12Z"
-    },
-    {
-      "title": "add more echo command",
-      "url": "https://github.com/nasermaghtoomi/containersbackup/pull/1",
-      "number": 1,
-      "repo": "nasermaghtoomi/containersbackup",
-      "repo_url": "https://github.com/nasermaghtoomi/containersbackup",
-      "repo_description": "This script takes a backup of the containers every hour and saves it as a tar file in the images directory.",
-      "stars": 0,
-      "language": "Shell",
-      "merged_at": "2026-02-08T15:08:32Z"
-    },
-    {
-      "title": "Add kafka helmchart and update readme",
-      "url": "https://github.com/Safarveisi/self-service-mlops/pull/5",
-      "number": 5,
-      "repo": "Safarveisi/self-service-mlops",
-      "repo_url": "https://github.com/Safarveisi/self-service-mlops",
-      "repo_description": "A self service mlops platform that enables a data scientist to seamlesly create an inference endpoint for an MLflow model using Kserve on Kubernetes",
-      "stars": 1,
-      "language": "Smarty",
-      "merged_at": "2025-09-22T21:15:12Z"
-    },
-    {
-      "title": "Dev",
-      "url": "https://github.com/Safarveisi/self-service-mlops/pull/3",
-      "number": 3,
-      "repo": "Safarveisi/self-service-mlops",
-      "repo_url": "https://github.com/Safarveisi/self-service-mlops",
-      "repo_description": "A self service mlops platform that enables a data scientist to seamlesly create an inference endpoint for an MLflow model using Kserve on Kubernetes",
-      "stars": 1,
-      "language": "Smarty",
-      "merged_at": "2025-09-16T12:25:47Z"
-    },
-    {
-      "title": "Add app.py",
-      "url": "https://github.com/rfatolahzade/testme/pull/2",
-      "number": 2,
-      "repo": "rfatolahzade/testme",
-      "repo_url": "https://github.com/rfatolahzade/testme",
-      "repo_description": "",
-      "stars": 0,
-      "language": "Python",
-      "merged_at": "2025-07-20T14:05:44Z"
-    },
-    {
-      "title": "Edit run.sh script",
-      "url": "https://github.com/rfatolahzade/testme/pull/1",
-      "number": 1,
-      "repo": "rfatolahzade/testme",
-      "repo_url": "https://github.com/rfatolahzade/testme",
-      "repo_description": "",
-      "stars": 0,
-      "language": "Python",
-      "merged_at": "2025-07-20T13:50:25Z"
     }
   ]
 }
