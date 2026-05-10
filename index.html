@@ -152,6 +152,7 @@
       <a href="#hero"     class="text-sm text-slate-400 hover:text-[#00d4ff] transition-colors">Home</a>
       <a href="#services" class="text-sm text-slate-400 hover:text-[#00d4ff] transition-colors">Services</a>
       <a href="#blog"     class="text-sm text-slate-400 hover:text-[#00d4ff] transition-colors">Blog</a>
+      <a href="#opensource" class="text-sm text-slate-400 hover:text-[#00d4ff] transition-colors">Open Source</a>
       <a href="#contact"  class="text-sm text-slate-400 hover:text-[#00d4ff] transition-colors">Contact</a>
       <a href="#contact"  class="text-sm px-4 py-2 rounded border border-[#00d4ff] text-[#00d4ff] hover:bg-[#00d4ff] hover:text-[#080812] transition-all font-medium">
         Get in Touch
@@ -169,6 +170,7 @@
     <a href="#hero"     class="text-slate-400 hover:text-[#00d4ff] text-sm" onclick="closeMob()">Home</a>
     <a href="#services" class="text-slate-400 hover:text-[#00d4ff] text-sm" onclick="closeMob()">Services</a>
     <a href="#blog"     class="text-slate-400 hover:text-[#00d4ff] text-sm" onclick="closeMob()">Blog</a>
+    <a href="#opensource" class="text-slate-400 hover:text-[#00d4ff] text-sm" onclick="closeMob()">Open Source</a>
     <a href="#contact"  class="text-slate-400 hover:text-[#00d4ff] text-sm" onclick="closeMob()">Contact</a>
   </div>
 </nav>
@@ -1015,6 +1017,107 @@
     </div>
   </div>
 </section>
+
+<!-- ══════════════════════════════════════════════════
+     OPEN SOURCE CONTRIBUTIONS  (auto-updated nightly)
+══════════════════════════════════════════════════ -->
+<section id="opensource" class="py-24 bg-[#0d0d1f]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
+      <div>
+        <span class="font-mono text-[#00ff88] text-sm tracking-widest uppercase">Giving back</span>
+        <h2 class="text-4xl sm:text-5xl font-bold text-white mt-3">My Open Source Contributions</h2>
+        <p class="text-slate-400 mt-2 max-w-md">
+          Merged pull requests across the public ecosystem.
+          <span id="oss-meta" class="text-slate-500 font-mono text-xs block mt-1"></span>
+        </p>
+      </div>
+      <a id="oss-profile-link" href="https://github.com/" target="_blank" rel="noopener"
+         class="self-start sm:self-auto flex items-center gap-2 px-5 py-2.5 rounded border border-[#00d4ff]/40 text-[#00d4ff] text-sm hover:bg-[#00d4ff]/10 transition-colors whitespace-nowrap">
+        <i class="fab fa-github"></i> GitHub Profile
+      </a>
+    </div>
+
+    <div id="oss-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="text-slate-500 font-mono text-sm col-span-full text-center py-12">
+        <i class="fas fa-spinner fa-spin mr-2"></i> Loading contributions…
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  (async () => {
+    const grid = document.getElementById('oss-grid');
+    const meta = document.getElementById('oss-meta');
+    const profileLink = document.getElementById('oss-profile-link');
+
+    const escape = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+    }[c]));
+
+    const fmtDate = (iso) => {
+      if (!iso) return '';
+      const d = new Date(iso);
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    };
+
+    const fmtStars = (n) => n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/,'') + 'k' : String(n);
+
+    try {
+      const res = await fetch('data/contributions.json?cb=' + Date.now(), { cache: 'no-cache' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      const items = data.contributions || [];
+
+      if (data.username) profileLink.href = `https://github.com/${data.username}`;
+      if (data.generated_at && items.length) {
+        meta.textContent = `${items.length} merged PR${items.length === 1 ? '' : 's'} · last refreshed ${fmtDate(data.generated_at)}`;
+      }
+
+      if (!items.length) {
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-12 text-slate-500 font-mono text-sm">
+            No merged contributions yet — check back soon.
+          </div>`;
+        return;
+      }
+
+      grid.innerHTML = items.map((c) => `
+        <a href="${escape(c.url)}" target="_blank" rel="noopener"
+           class="bcard anim-border reveal bg-[#12122a] border border-[#2d2d5a] rounded-xl p-5 group flex flex-col">
+          <div class="flex items-center justify-between gap-3 mb-3">
+            <span class="px-2 py-0.5 bg-[#00ff88]/10 border border-[#00ff88]/20 rounded text-xs text-[#00ff88] font-mono truncate max-w-[14rem]">
+              <i class="fab fa-github mr-1"></i>${escape(c.repo)}
+            </span>
+            <span class="text-slate-500 text-xs font-mono whitespace-nowrap">
+              ${fmtDate(c.merged_at)}
+            </span>
+          </div>
+          <h3 class="font-bold text-white text-base mb-2 leading-snug group-hover:text-[#00d4ff] transition-colors lc3">
+            ${escape(c.title)}
+          </h3>
+          ${c.repo_description ? `<p class="text-slate-400 text-sm leading-relaxed mb-4 lc3">${escape(c.repo_description)}</p>` : ''}
+          <div class="mt-auto flex items-center gap-3 text-xs font-mono text-slate-500">
+            ${c.language ? `<span class="px-2 py-0.5 bg-[#00d4ff]/10 border border-[#00d4ff]/20 rounded text-[#00d4ff]">${escape(c.language)}</span>` : ''}
+            ${c.stars ? `<span><i class="fas fa-star text-[#00ff88] mr-1"></i>${fmtStars(c.stars)}</span>` : ''}
+            <span class="ml-auto text-[#00d4ff] group-hover:gap-2 inline-flex items-center gap-1 transition-all">
+              #${c.number} <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+            </span>
+          </div>
+        </a>
+      `).join('');
+    } catch (err) {
+      console.error('contributions load failed:', err);
+      grid.innerHTML = `
+        <div class="col-span-full text-center py-12 text-slate-500 font-mono text-sm">
+          Couldn't load contributions right now.
+        </div>`;
+    }
+  })();
+</script>
 
 <!-- ══════════════════════════════════════════════════
      CONTACT

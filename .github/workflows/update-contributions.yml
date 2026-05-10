@@ -1,0 +1,42 @@
+name: Update Open Source Contributions
+
+on:
+  schedule:
+    - cron: '0 3 * * *'   # nightly at 03:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-contributions
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch merged PRs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USERNAME: ${{ vars.GH_USERNAME || 'infraartists' }}
+          EXCLUDE_OWNERS: ${{ vars.EXCLUDE_OWNERS || 'infraartists,InfraArtists' }}
+        run: python scripts/fetch_contributions.py
+
+      - name: Commit and push if changed
+        run: |
+          if [ -n "$(git status --porcelain data/contributions.json)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/contributions.json
+            git commit -m "chore(contributions): nightly refresh"
+            git push
+          else
+            echo "No changes to contributions.json"
+          fi
