@@ -27,6 +27,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USERNAME: ${{ vars.GH_USERNAME || 'infraartists' }}
           EXCLUDE_OWNERS: ${{ vars.EXCLUDE_OWNERS || 'infraartists,InfraArtists' }}
+          MIN_STARS: ${{ vars.MIN_STARS || '200' }}
         run: python scripts/fetch_contributions.py
 
       - name: Commit and push if changed

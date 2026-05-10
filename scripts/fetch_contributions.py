@@ -14,6 +14,7 @@ from pathlib import Path
 USERNAME = os.environ.get("GH_USERNAME", "").strip()
 TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 OUTPUT = Path(os.environ.get("OUTPUT_PATH", "data/contributions.json"))
+MIN_STARS = int(os.environ.get("MIN_STARS", "200"))
 
 # Owners to exclude (yours/your orgs). Comma-separated env var.
 EXCLUDE_OWNERS = [
@@ -93,6 +94,9 @@ def main() -> int:
         repo = repo_meta(full, cache)
         if repo.get("private") or repo.get("fork"):
             continue
+        stars = int(repo.get("stargazers_count") or 0)
+        if stars < MIN_STARS:
+            continue
         contributions.append(
             {
                 "title": pr["title"],
@@ -101,7 +105,7 @@ def main() -> int:
                 "repo": full,
                 "repo_url": f"https://github.com/{full}",
                 "repo_description": (repo.get("description") or "").strip(),
-                "stars": int(repo.get("stargazers_count") or 0),
+                "stars": stars,
                 "language": repo.get("language") or "",
                 "merged_at": (pr.get("pull_request") or {}).get("merged_at")
                 or pr.get("closed_at"),

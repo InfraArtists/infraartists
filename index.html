@@ -123,6 +123,11 @@
     .reveal { opacity: 0; transform: translateY(22px); }
     .revealed { opacity: 1 !important; transform: translateY(0) !important; transition: opacity .55s ease, transform .55s ease; }
 
+    /* open-state chevron rotation for OSS repo cards */
+    details[open] > summary .oss-chev { transform: rotate(180deg); }
+    details > summary::-webkit-details-marker { display: none; }
+    details > summary { list-style: none; }
+
     /* line-clamp fallback */
     .lc3 {
       display: -webkit-box;
@@ -1073,11 +1078,35 @@
       const items = data.contributions || [];
 
       if (data.username) profileLink.href = `https://github.com/${data.username}`;
+
+      // group PRs by repo
+      const grouped = new Map();
+      for (const c of items) {
+        if (!grouped.has(c.repo)) {
+          grouped.set(c.repo, {
+            repo: c.repo,
+            repo_url: c.repo_url,
+            repo_description: c.repo_description,
+            stars: c.stars,
+            language: c.language,
+            prs: [],
+          });
+        }
+        grouped.get(c.repo).prs.push({
+          title: c.title, url: c.url, number: c.number, merged_at: c.merged_at,
+        });
+      }
+      const repos = [...grouped.values()].map((r) => {
+        r.prs.sort((a, b) => (b.merged_at || '').localeCompare(a.merged_at || ''));
+        r.latest = r.prs[0]?.merged_at || '';
+        return r;
+      }).sort((a, b) => b.latest.localeCompare(a.latest));
+
       if (data.generated_at && items.length) {
-        meta.textContent = `${items.length} merged PR${items.length === 1 ? '' : 's'} · last refreshed ${fmtDate(data.generated_at)}`;
+        meta.textContent = `${items.length} merged PR${items.length === 1 ? '' : 's'} across ${repos.length} repo${repos.length === 1 ? '' : 's'} · last refreshed ${fmtDate(data.generated_at)}`;
       }
 
-      if (!items.length) {
+      if (!repos.length) {
         grid.innerHTML = `
           <div class="col-span-full text-center py-12 text-slate-500 font-mono text-sm">
             No merged contributions yet — check back soon.
@@ -1085,30 +1114,55 @@
         return;
       }
 
-      grid.innerHTML = items.map((c) => `
-        <a href="${escape(c.url)}" target="_blank" rel="noopener"
-           class="bcard anim-border bg-[#12122a] border border-[#2d2d5a] rounded-xl p-5 group flex flex-col">
-          <div class="flex items-center justify-between gap-3 mb-3">
-            <span class="px-2 py-0.5 bg-[#00ff88]/10 border border-[#00ff88]/20 rounded text-xs text-[#00ff88] font-mono truncate max-w-[14rem]">
-              <i class="fab fa-github mr-1"></i>${escape(c.repo)}
-            </span>
-            <span class="text-slate-500 text-xs font-mono whitespace-nowrap">
-              ${fmtDate(c.merged_at)}
-            </span>
+      grid.innerHTML = repos.map((r) => {
+        const [owner, name] = r.repo.split('/');
+        const prCount = r.prs.length;
+        return `
+        <details class="bcard anim-border bg-[#12122a] border border-[#2d2d5a] rounded-xl group overflow-hidden">
+          <summary class="cursor-pointer list-none p-5 flex flex-col gap-3 select-none hover:bg-[#1a1a3e]/40 transition-colors">
+            <div class="flex items-center justify-between gap-3">
+              <span class="px-2 py-0.5 bg-[#00ff88]/10 border border-[#00ff88]/20 rounded text-xs text-[#00ff88] font-mono truncate">
+                <i class="fab fa-github mr-1"></i>${escape(owner)}
+              </span>
+              <span class="text-slate-500 text-xs font-mono whitespace-nowrap inline-flex items-center gap-3">
+                <span><i class="fas fa-star text-[#00ff88] mr-1"></i>${fmtStars(r.stars)}</span>
+                <i class="fas fa-chevron-down text-[10px] transition-transform duration-200 oss-chev"></i>
+              </span>
+            </div>
+            <h3 class="font-bold text-white text-base leading-snug group-hover:text-[#00d4ff] transition-colors break-words">
+              ${escape(name)}
+            </h3>
+            ${r.repo_description ? `<p class="text-slate-400 text-sm leading-relaxed lc3">${escape(r.repo_description)}</p>` : ''}
+            <div class="flex items-center gap-3 text-xs font-mono text-slate-500 flex-wrap">
+              ${r.language ? `<span class="px-2 py-0.5 bg-[#00d4ff]/10 border border-[#00d4ff]/20 rounded text-[#00d4ff]">${escape(r.language)}</span>` : ''}
+              <span class="px-2 py-0.5 bg-[#00d4ff]/10 border border-[#00d4ff]/20 rounded text-[#00d4ff]">
+                ${prCount} merged PR${prCount === 1 ? '' : 's'}
+              </span>
+              <span class="ml-auto text-slate-500">click to expand</span>
+            </div>
+          </summary>
+          <div class="border-t border-[#2d2d5a] bg-[#0d0d1f]/60 divide-y divide-[#2d2d5a]/60">
+            ${r.prs.map((pr) => `
+              <a href="${escape(pr.url)}" target="_blank" rel="noopener"
+                 class="block px-5 py-3 hover:bg-[#1a1a3e]/40 transition-colors">
+                <div class="flex items-start justify-between gap-3">
+                  <span class="text-slate-300 text-sm leading-snug flex-1">
+                    <span class="text-[#00d4ff] font-mono mr-2">#${pr.number}</span>${escape(pr.title)}
+                  </span>
+                  <span class="text-slate-500 text-xs font-mono whitespace-nowrap pt-0.5">
+                    ${fmtDate(pr.merged_at)}
+                  </span>
+                </div>
+              </a>
+            `).join('')}
+            <a href="${escape(r.repo_url)}" target="_blank" rel="noopener"
+               class="block px-5 py-3 text-xs font-mono text-[#00d4ff] hover:bg-[#1a1a3e]/40 transition-colors">
+              View repository <i class="fas fa-arrow-up-right-from-square text-[10px] ml-1"></i>
+            </a>
           </div>
-          <h3 class="font-bold text-white text-base mb-2 leading-snug group-hover:text-[#00d4ff] transition-colors lc3">
-            ${escape(c.title)}
-          </h3>
-          ${c.repo_description ? `<p class="text-slate-400 text-sm leading-relaxed mb-4 lc3">${escape(c.repo_description)}</p>` : ''}
-          <div class="mt-auto flex items-center gap-3 text-xs font-mono text-slate-500">
-            ${c.language ? `<span class="px-2 py-0.5 bg-[#00d4ff]/10 border border-[#00d4ff]/20 rounded text-[#00d4ff]">${escape(c.language)}</span>` : ''}
-            ${c.stars ? `<span><i class="fas fa-star text-[#00ff88] mr-1"></i>${fmtStars(c.stars)}</span>` : ''}
-            <span class="ml-auto text-[#00d4ff] group-hover:gap-2 inline-flex items-center gap-1 transition-all">
-              #${c.number} <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-            </span>
-          </div>
-        </a>
-      `).join('');
+        </details>
+      `;
+      }).join('');
     } catch (err) {
       console.error('contributions load failed:', err);
       grid.innerHTML = `
