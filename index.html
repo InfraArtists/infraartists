@@ -123,10 +123,9 @@
     .reveal { opacity: 0; transform: translateY(22px); }
     .revealed { opacity: 1 !important; transform: translateY(0) !important; transition: opacity .55s ease, transform .55s ease; }
 
-    /* open-state chevron rotation for OSS repo cards */
-    details[open] > summary .oss-chev { transform: rotate(180deg); }
-    details > summary::-webkit-details-marker { display: none; }
-    details > summary { list-style: none; }
+    /* OSS repo card toggle button — strip default <button> chrome */
+    .oss-toggle { background: transparent; border: 0; font: inherit; color: inherit; padding: 0; }
+    .oss-chev { transition: transform .2s ease; }
 
     /* line-clamp fallback */
     .lc3 {
@@ -1118,8 +1117,9 @@
         const [owner, name] = r.repo.split('/');
         const prCount = r.prs.length;
         return `
-        <details class="bcard anim-border bg-[#12122a] border border-[#2d2d5a] rounded-xl group overflow-hidden">
-          <summary class="cursor-pointer select-none hover:bg-[#1a1a3e]/40 transition-colors">
+        <div class="oss-card bcard anim-border bg-[#12122a] border border-[#2d2d5a] rounded-xl group overflow-hidden">
+          <button type="button" class="oss-toggle w-full text-left cursor-pointer select-none hover:bg-[#1a1a3e]/40 transition-colors"
+                  aria-expanded="false">
             <div class="p-5 flex flex-col gap-3">
               <div class="flex items-center justify-between gap-3">
                 <span class="px-2 py-0.5 bg-[#00ff88]/10 border border-[#00ff88]/20 rounded text-xs text-[#00ff88] font-mono truncate">
@@ -1139,11 +1139,11 @@
                 <span class="px-2 py-0.5 bg-[#00d4ff]/10 border border-[#00d4ff]/20 rounded text-[#00d4ff]">
                   ${prCount} merged PR${prCount === 1 ? '' : 's'}
                 </span>
-                <span class="ml-auto text-slate-500">click to expand</span>
+                <span class="ml-auto text-slate-500 oss-hint">click to expand</span>
               </div>
             </div>
-          </summary>
-          <div class="border-t border-[#2d2d5a] bg-[#0d0d1f]/60 divide-y divide-[#2d2d5a]/60">
+          </button>
+          <div class="oss-list hidden border-t border-[#2d2d5a] bg-[#0d0d1f]/60 divide-y divide-[#2d2d5a]/60">
             ${r.prs.map((pr) => `
               <a href="${escape(pr.url)}" target="_blank" rel="noopener"
                  class="block px-5 py-3 hover:bg-[#1a1a3e]/40 transition-colors">
@@ -1162,9 +1162,23 @@
               View repository <i class="fas fa-arrow-up-right-from-square text-[10px] ml-1"></i>
             </a>
           </div>
-        </details>
+        </div>
       `;
       }).join('');
+
+      // wire up click-to-expand
+      grid.querySelectorAll('.oss-card').forEach((card) => {
+        const btn  = card.querySelector('.oss-toggle');
+        const list = card.querySelector('.oss-list');
+        const chev = card.querySelector('.oss-chev');
+        const hint = card.querySelector('.oss-hint');
+        btn.addEventListener('click', () => {
+          const open = list.classList.toggle('hidden') === false;
+          btn.setAttribute('aria-expanded', String(open));
+          if (chev) chev.style.transform = open ? 'rotate(180deg)' : '';
+          if (hint) hint.textContent = open ? 'click to collapse' : 'click to expand';
+        });
+      });
     } catch (err) {
       console.error('contributions load failed:', err);
       grid.innerHTML = `
