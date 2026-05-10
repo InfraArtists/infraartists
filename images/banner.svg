@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 1152" width="2048" height="1152">
+  <!--
+    INFRAARTISTS  YouTube banner — 2048 x 1152
+    Theme matches images/logo.svg
+    ──────────────────────────────────────────
+    Morse layout (centered horizontally):
+      dot  : circle r=6           (width 12)
+      dash : rect 36 x 12 rx=6
+      intra-letter gap : 12
+      inter-letter gap : 36
+      total morse width: 1116
+      x-offset to center on 2048 : 466
+      vertical centerline : y = 576
+  -->
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#00ff88"/>
+    </linearGradient>
+    <linearGradient id="gv" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#00ff88"/>
+    </linearGradient>
+    <radialGradient id="aurora" cx="50%" cy="50%" r="55%">
+      <stop offset="0%"   stop-color="#00d4ff" stop-opacity="0.18"/>
+      <stop offset="55%"  stop-color="#00ff88" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0.00"/>
+    </radialGradient>
+    <radialGradient id="aurora2" cx="50%" cy="50%" r="35%">
+      <stop offset="0%"   stop-color="#00ff88" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0.00"/>
+    </radialGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bigGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="2048" height="1152" fill="#060610"/>
+
+  <!-- aurora glow layers, centered -->
+  <ellipse cx="1024" cy="576" rx="1100" ry="520" fill="url(#aurora)"/>
+  <ellipse cx="1024" cy="576" rx="600"  ry="200" fill="url(#aurora2)"/>
+
+  <!-- subtle grid (opacity matches logo) -->
+  <g opacity="0.04" stroke="#00d4ff" stroke-width="1">
+    <line x1="0" y1="144"  x2="2048" y2="144"/>
+    <line x1="0" y1="288"  x2="2048" y2="288"/>
+    <line x1="0" y1="432"  x2="2048" y2="432"/>
+    <line x1="0" y1="576"  x2="2048" y2="576"/>
+    <line x1="0" y1="720"  x2="2048" y2="720"/>
+    <line x1="0" y1="864"  x2="2048" y2="864"/>
+    <line x1="0" y1="1008" x2="2048" y2="1008"/>
+    <line x1="256"  y1="0" x2="256"  y2="1152"/>
+    <line x1="512"  y1="0" x2="512"  y2="1152"/>
+    <line x1="768"  y1="0" x2="768"  y2="1152"/>
+    <line x1="1024" y1="0" x2="1024" y2="1152"/>
+    <line x1="1280" y1="0" x2="1280" y2="1152"/>
+    <line x1="1536" y1="0" x2="1536" y2="1152"/>
+    <line x1="1792" y1="0" x2="1792" y2="1152"/>
+  </g>
+
+  <!-- artist brushstroke (diagonal, translucent) -->
+  <path d="M 100,1000 C 600,820 1400,400 1950,150"
+        stroke="url(#g)" stroke-width="120" stroke-linecap="round"
+        fill="none" opacity="0.05"/>
+  <path d="M 100,990 C 600,810 1400,390 1950,140"
+        stroke="url(#g)" stroke-width="28"  stroke-linecap="round"
+        fill="none" opacity="0.10"/>
+
+  <!-- paint-splatter dots (echoing logo decoration) -->
+  <circle cx="220"  cy="180"  r="14" fill="#00d4ff" opacity="0.45" filter="url(#glow)"/>
+  <circle cx="280"  cy="240"  r="8"  fill="#00ff88" opacity="0.40"/>
+  <circle cx="160"  cy="280"  r="6"  fill="#00d4ff" opacity="0.50"/>
+  <circle cx="320"  cy="140"  r="5"  fill="#00ff88" opacity="0.30"/>
+
+  <circle cx="1820" cy="940"  r="14" fill="#00ff88" opacity="0.45" filter="url(#glow)"/>
+  <circle cx="1750" cy="990"  r="8"  fill="#00d4ff" opacity="0.40"/>
+  <circle cx="1900" cy="900"  r="6"  fill="#00ff88" opacity="0.50"/>
+  <circle cx="1700" cy="930"  r="5"  fill="#00d4ff" opacity="0.30"/>
+
+  <circle cx="1880" cy="200"  r="10" fill="#00d4ff" opacity="0.35" filter="url(#glow)"/>
+  <circle cx="180"  cy="940"  r="10" fill="#00ff88" opacity="0.35" filter="url(#glow)"/>
+
+  <!-- soft halo behind morse for emphasis -->
+  <ellipse cx="1024" cy="576" rx="700" ry="60" fill="url(#aurora2)" opacity="0.5"/>
+
+  <!-- thin horizontal guide rails above/below morse (very faint) -->
+  <line x1="430"  y1="510" x2="1618" y2="510" stroke="url(#g)" stroke-width="1" opacity="0.18"/>
+  <line x1="430"  y1="642" x2="1618" y2="642" stroke="url(#g)" stroke-width="1" opacity="0.18"/>
+
+  <!-- ══════════════════════════════════════
+       MORSE CODE — INFRAARTISTS
+       Origin x = 466, centerline y = 576
+       Dot: <circle cx="x+6" cy="576" r="6"/>
+       Dash: <rect  x="x"   y="570" width="36" height="12" rx="6"/>
+  ══════════════════════════════════════ -->
+  <g filter="url(#glow)">
+    <!-- I  · · -->
+    <circle cx="472"  cy="576" r="6" fill="url(#g)"/>
+    <circle cx="496"  cy="576" r="6" fill="url(#g)"/>
+
+    <!-- N  – · -->
+    <rect x="538"  y="570" width="36" height="12" rx="6" fill="url(#g)"/>
+    <circle cx="592"  cy="576" r="6" fill="url(#g)"/>
+
+    <!-- F  · · – · -->
+    <circle cx="640"  cy="576" r="6" fill="url(#g)"/>
+    <circle cx="664"  cy="576" r="6" fill="url(#g)"/>
+    <rect x="682"  y="570" width="36" height="12" rx="6" fill="url(#g)"/>
+    <circle cx="736"  cy="576" r="6" fill="url(#g)"/>
+
+    <!-- R  · – · -->
+    <circle cx="784"  cy="576" r="6" fill="url(#g)"/>
+    <rect x="802"  y="570" width="36" height="12" rx="6" fill="url(#g)"/>
+    <circle cx="856"  cy="576" r="6" fill="url(#g)"/>
+
+    <!-- A  · – -->
+    <circle cx="904"  cy="576" r="6" fill="url(#g)"/>
+    <rect x="922"  y="570" width="36" height="12" rx="6" fill="url(#g)"/>
+
+    <!-- A  · – -->
+    <circle cx="1000" cy="576" r="6" fill="url(#g)"/>
+    <rect x="1018" y="570" width="36" height="12" rx="6" fill="url(#g)"/>
+
+    <!-- R  · – · -->
+    <circle cx="1096" cy="576" r="6" fill="url(#g)"/>
+    <rect x="1114" y="570" width="36" height="12" rx="6" fill="url(#g)"/>
+    <circle cx="1168" cy="576" r="6" fill="url(#g)"/>
+
+    <!-- T  – -->
+    <rect x="1210" y="570" width="36" height="12" rx="6" fill="url(#g)"/>
+
+    <!-- I  · · -->
+    <circle cx="1288" cy="576" r="6" fill="url(#g)"/>
+    <circle cx="1312" cy="576" r="6" fill="url(#g)"/>
+
+    <!-- S  · · · -->
+    <circle cx="1360" cy="576" r="6" fill="url(#g)"/>
+    <circle cx="1384" cy="576" r="6" fill="url(#g)"/>
+    <circle cx="1408" cy="576" r="6" fill="url(#g)"/>
+
+    <!-- T  – -->
+    <rect x="1450" y="570" width="36" height="12" rx="6" fill="url(#g)"/>
+
+    <!-- S  · · · -->
+    <circle cx="1528" cy="576" r="6" fill="url(#g)"/>
+    <circle cx="1552" cy="576" r="6" fill="url(#g)"/>
+    <circle cx="1576" cy="576" r="6" fill="url(#g)"/>
+  </g>
+</svg>
