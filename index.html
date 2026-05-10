@@ -1119,26 +1119,28 @@
         const prCount = r.prs.length;
         return `
         <details class="bcard anim-border bg-[#12122a] border border-[#2d2d5a] rounded-xl group overflow-hidden">
-          <summary class="cursor-pointer list-none p-5 flex flex-col gap-3 select-none hover:bg-[#1a1a3e]/40 transition-colors">
-            <div class="flex items-center justify-between gap-3">
-              <span class="px-2 py-0.5 bg-[#00ff88]/10 border border-[#00ff88]/20 rounded text-xs text-[#00ff88] font-mono truncate">
-                <i class="fab fa-github mr-1"></i>${escape(owner)}
-              </span>
-              <span class="text-slate-500 text-xs font-mono whitespace-nowrap inline-flex items-center gap-3">
-                <span><i class="fas fa-star text-[#00ff88] mr-1"></i>${fmtStars(r.stars)}</span>
-                <i class="fas fa-chevron-down text-[10px] transition-transform duration-200 oss-chev"></i>
-              </span>
-            </div>
-            <h3 class="font-bold text-white text-base leading-snug group-hover:text-[#00d4ff] transition-colors break-words">
-              ${escape(name)}
-            </h3>
-            ${r.repo_description ? `<p class="text-slate-400 text-sm leading-relaxed lc3">${escape(r.repo_description)}</p>` : ''}
-            <div class="flex items-center gap-3 text-xs font-mono text-slate-500 flex-wrap">
-              ${r.language ? `<span class="px-2 py-0.5 bg-[#00d4ff]/10 border border-[#00d4ff]/20 rounded text-[#00d4ff]">${escape(r.language)}</span>` : ''}
-              <span class="px-2 py-0.5 bg-[#00d4ff]/10 border border-[#00d4ff]/20 rounded text-[#00d4ff]">
-                ${prCount} merged PR${prCount === 1 ? '' : 's'}
-              </span>
-              <span class="ml-auto text-slate-500">click to expand</span>
+          <summary class="cursor-pointer select-none hover:bg-[#1a1a3e]/40 transition-colors">
+            <div class="p-5 flex flex-col gap-3">
+              <div class="flex items-center justify-between gap-3">
+                <span class="px-2 py-0.5 bg-[#00ff88]/10 border border-[#00ff88]/20 rounded text-xs text-[#00ff88] font-mono truncate">
+                  <i class="fab fa-github mr-1"></i>${escape(owner)}
+                </span>
+                <span class="text-slate-500 text-xs font-mono whitespace-nowrap inline-flex items-center gap-3">
+                  <span><i class="fas fa-star text-[#00ff88] mr-1"></i>${fmtStars(r.stars)}</span>
+                  <i class="fas fa-chevron-down text-[10px] transition-transform duration-200 oss-chev"></i>
+                </span>
+              </div>
+              <h3 class="font-bold text-white text-base leading-snug group-hover:text-[#00d4ff] transition-colors break-words">
+                ${escape(name)}
+              </h3>
+              ${r.repo_description ? `<p class="text-slate-400 text-sm leading-relaxed lc3">${escape(r.repo_description)}</p>` : ''}
+              <div class="flex items-center gap-3 text-xs font-mono text-slate-500 flex-wrap">
+                ${r.language ? `<span class="px-2 py-0.5 bg-[#00d4ff]/10 border border-[#00d4ff]/20 rounded text-[#00d4ff]">${escape(r.language)}</span>` : ''}
+                <span class="px-2 py-0.5 bg-[#00d4ff]/10 border border-[#00d4ff]/20 rounded text-[#00d4ff]">
+                  ${prCount} merged PR${prCount === 1 ? '' : 's'}
+                </span>
+                <span class="ml-auto text-slate-500">click to expand</span>
+              </div>
             </div>
           </summary>
           <div class="border-t border-[#2d2d5a] bg-[#0d0d1f]/60 divide-y divide-[#2d2d5a]/60">
