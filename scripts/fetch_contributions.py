@@ -14,7 +14,11 @@ from pathlib import Path
 USERNAME = os.environ.get("GH_USERNAME", "").strip()
 TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 OUTPUT = Path(os.environ.get("OUTPUT_PATH", "data/contributions.json"))
+README = Path(os.environ.get("README_PATH", "README.md"))
 MIN_STARS = int(os.environ.get("MIN_STARS", "200"))
+
+README_START = "<!-- CONTRIBUTIONS:START -->"
+README_END = "<!-- CONTRIBUTIONS:END -->"
 
 # Owners to exclude (yours/your orgs). Comma-separated env var.
 EXCLUDE_OWNERS = [
@@ -78,6 +82,106 @@ def repo_meta(full_name: str, cache: dict) -> dict:
     return cache[full_name]
 
 
+def _fmt_stars(n: int) -> str:
+    return f"{n / 1000:.1f}".rstrip("0").rstrip(".") + "k" if n >= 1000 else str(n)
+
+
+def _fmt_date(iso: str) -> str:
+    if not iso:
+        return ""
+    try:
+        return dt.datetime.strptime(iso[:10], "%Y-%m-%d").strftime("%b %d, %Y")
+    except ValueError:
+        return iso[:10]
+
+
+def render_markdown(contributions: list[dict], generated_at: str) -> str:
+    if not contributions:
+        return "_No merged contributions yet — check back soon._\n"
+
+    grouped: dict[str, dict] = {}
+    for c in contributions:
+        repo = c["repo"]
+        g = grouped.setdefault(
+            repo,
+            {
+                "repo": repo,
+                "repo_url": c["repo_url"],
+                "repo_description": c.get("repo_description", ""),
+                "stars": c.get("stars", 0),
+                "language": c.get("language", ""),
+                "prs": [],
+            },
+        )
+        g["prs"].append(c)
+
+    repos = list(grouped.values())
+    for r in repos:
+        r["prs"].sort(key=lambda p: p.get("merged_at") or "", reverse=True)
+        r["latest"] = r["prs"][0].get("merged_at") or ""
+    repos.sort(key=lambda r: r["latest"], reverse=True)
+
+    total_prs = sum(len(r["prs"]) for r in repos)
+    lines: list[str] = [
+        f"**{total_prs} merged PR{'s' if total_prs != 1 else ''} across "
+        f"{len(repos)} repo{'s' if len(repos) != 1 else ''}** · "
+        f"last refreshed {_fmt_date(generated_at)}",
+        "",
+    ]
+
+    for r in repos:
+        pr_count = len(r["prs"])
+        meta_bits = [f"⭐ {_fmt_stars(r['stars'])}"]
+        if r.get("language"):
+            meta_bits.append(r["language"])
+        meta_bits.append(f"{pr_count} merged PR{'s' if pr_count != 1 else ''}")
+        meta = " · ".join(meta_bits)
+
+        lines.append(
+            f"<details>\n  <summary><a href=\"{r['repo_url']}\"><b>{r['repo']}</b></a> "
+            f"— <sub>{meta}</sub></summary>\n"
+        )
+        if r.get("repo_description"):
+            lines.append(f"  > {r['repo_description']}\n")
+        lines.append("")
+        for pr in r["prs"]:
+            lines.append(
+                f"  - [#{pr['number']} {pr['title']}]({pr['url']}) "
+                f"<sub>· {_fmt_date(pr.get('merged_at') or '')}</sub>"
+            )
+        lines.append("</details>\n")
+
+    return "\n".join(lines)
+
+
+def update_readme(markdown_block: str) -> bool:
+    if not README.exists():
+        print(f"warn: {README} not found; skipping README update", file=sys.stderr)
+        return False
+
+    text = README.read_text()
+    if README_START not in text or README_END not in text:
+        print(
+            f"warn: {README} missing {README_START}/{README_END} markers; skipping",
+            file=sys.stderr,
+        )
+        return False
+
+    before, rest = text.split(README_START, 1)
+    _, after = rest.split(README_END, 1)
+    new_text = (
+        f"{before}{README_START}\n"
+        f"<!-- This section is auto-generated nightly by "
+        f".github/workflows/update-contributions.yml — do not edit by hand. -->\n\n"
+        f"{markdown_block.rstrip()}\n\n"
+        f"{README_END}{after}"
+    )
+    if new_text == text:
+        return False
+    README.write_text(new_text)
+    return True
+
+
 def main() -> int:
     if not USERNAME:
         print("error: GH_USERNAME env var is required", file=sys.stderr)
@@ -124,6 +228,11 @@ def main() -> int:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(payload, indent=2) + "\n")
     print(f"Wrote {len(contributions)} contributions to {OUTPUT}")
+
+    if update_readme(render_markdown(contributions, payload["generated_at"])):
+        print(f"Updated {README}")
+    else:
+        print(f"No changes to {README}")
     return 0
 
 

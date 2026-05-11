@@ -32,12 +32,12 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          if [ -n "$(git status --porcelain data/contributions.json)" ]; then
+          if [ -n "$(git status --porcelain data/contributions.json README.md)" ]; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/contributions.json
+            git add data/contributions.json README.md
             git commit -m "chore(contributions): nightly refresh"
             git push
           else
-            echo "No changes to contributions.json"
+            echo "No changes to contributions"
           fi
