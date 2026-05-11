@@ -1143,7 +1143,7 @@
               </div>
             </div>
           </button>
-          <div class="oss-list hidden border-t border-[#2d2d5a] bg-[#0d0d1f]/60 divide-y divide-[#2d2d5a]/60">
+          <div class="oss-list border-t border-[#2d2d5a] bg-[#0d0d1f]/60 divide-y divide-[#2d2d5a]/60" style="display:none">
             ${r.prs.map((pr) => `
               <a href="${escape(pr.url)}" target="_blank" rel="noopener"
                  class="block px-5 py-3 hover:bg-[#1a1a3e]/40 transition-colors">
@@ -1172,8 +1172,11 @@
         const list = card.querySelector('.oss-list');
         const chev = card.querySelector('.oss-chev');
         const hint = card.querySelector('.oss-hint');
-        btn.addEventListener('click', () => {
-          const open = list.classList.toggle('hidden') === false;
+        if (!btn || !list) return;
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const open = list.style.display === 'none' || list.style.display === '';
+          list.style.display = open ? 'block' : 'none';
           btn.setAttribute('aria-expanded', String(open));
           if (chev) chev.style.transform = open ? 'rotate(180deg)' : '';
           if (hint) hint.textContent = open ? 'click to collapse' : 'click to expand';
