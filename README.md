@@ -7,7 +7,7 @@
 <!-- CONTRIBUTIONS:START -->
 <!-- This section is auto-generated nightly by .github/workflows/update-contributions.yml — do not edit by hand. -->
 
-**4 merged PRs across 2 repos** · last refreshed May 11, 2026
+**4 merged PRs across 2 repos** · last refreshed May 12, 2026
 
 <details>
   <summary><a href="https://github.com/prometheus-community/helm-charts"><b>prometheus-community/helm-charts</b></a> — <sub>⭐ 6.1k · Mustache · 1 merged PR</sub></summary>
