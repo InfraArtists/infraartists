@@ -7,7 +7,16 @@
 <!-- CONTRIBUTIONS:START -->
 <!-- This section is auto-generated nightly by .github/workflows/update-contributions.yml — do not edit by hand. -->
 
-**4 merged PRs across 2 repos** · last refreshed May 12, 2026
+**5 merged PRs across 3 repos** · last refreshed May 13, 2026
+
+<details>
+  <summary><a href="https://github.com/oVirt/ovirt-engine"><b>oVirt/ovirt-engine</b></a> — <sub>⭐ 597 · Java · 1 merged PR</sub></summary>
+
+  > The oVirt Engine virtualization manager
+
+
+  - [#1156 ansible: fix kdump role crashkernel check using literal regexp instead of variable](https://github.com/oVirt/ovirt-engine/pull/1156) <sub>· May 12, 2026</sub>
+</details>
 
 <details>
   <summary><a href="https://github.com/prometheus-community/helm-charts"><b>prometheus-community/helm-charts</b></a> — <sub>⭐ 6.1k · Mustache · 1 merged PR</sub></summary>
