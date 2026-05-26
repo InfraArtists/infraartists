@@ -7,7 +7,7 @@
 <!-- CONTRIBUTIONS:START -->
 <!-- This section is auto-generated nightly by .github/workflows/update-contributions.yml — do not edit by hand. -->
 
-**5 merged PRs across 3 repos** · last refreshed May 25, 2026
+**5 merged PRs across 3 repos** · last refreshed May 26, 2026
 
 <details>
   <summary><a href="https://github.com/oVirt/ovirt-engine"><b>oVirt/ovirt-engine</b></a> — <sub>⭐ 596 · Java · 1 merged PR</sub></summary>
