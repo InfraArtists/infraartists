@@ -7,7 +7,7 @@
 <!-- CONTRIBUTIONS:START -->
 <!-- This section is auto-generated nightly by .github/workflows/update-contributions.yml — do not edit by hand. -->
 
-**5 merged PRs across 3 repos** · last refreshed Jun 30, 2026
+**5 merged PRs across 3 repos** · last refreshed Jul 01, 2026
 
 <details>
   <summary><a href="https://github.com/oVirt/ovirt-engine"><b>oVirt/ovirt-engine</b></a> — <sub>⭐ 601 · Java · 1 merged PR</sub></summary>
@@ -19,7 +19,7 @@
 </details>
 
 <details>
-  <summary><a href="https://github.com/prometheus-community/helm-charts"><b>prometheus-community/helm-charts</b></a> — <sub>⭐ 6.1k · Mustache · 1 merged PR</sub></summary>
+  <summary><a href="https://github.com/prometheus-community/helm-charts"><b>prometheus-community/helm-charts</b></a> — <sub>⭐ 6.2k · Mustache · 1 merged PR</sub></summary>
 
   > Prometheus community Helm charts
 
