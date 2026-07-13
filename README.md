@@ -7,10 +7,10 @@
 <!-- CONTRIBUTIONS:START -->
 <!-- This section is auto-generated nightly by .github/workflows/update-contributions.yml — do not edit by hand. -->
 
-**5 merged PRs across 3 repos** · last refreshed Jul 12, 2026
+**5 merged PRs across 3 repos** · last refreshed Jul 13, 2026
 
 <details>
-  <summary><a href="https://github.com/oVirt/ovirt-engine"><b>oVirt/ovirt-engine</b></a> — <sub>⭐ 602 · Java · 1 merged PR</sub></summary>
+  <summary><a href="https://github.com/oVirt/ovirt-engine"><b>oVirt/ovirt-engine</b></a> — <sub>⭐ 604 · Java · 1 merged PR</sub></summary>
 
   > The oVirt Engine virtualization manager
 
