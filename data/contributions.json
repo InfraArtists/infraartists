@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T03:36:48Z",
+  "generated_at": "2026-08-20T03:37:01Z",
   "username": "infraartists",
   "count": 5,
   "contributions": [
@@ -21,7 +21,7 @@
       "repo": "prometheus-community/helm-charts",
       "repo_url": "https://github.com/prometheus-community/helm-charts",
       "repo_description": "Prometheus community Helm charts",
-      "stars": 6170,
+      "stars": 6172,
       "language": "Mustache",
       "merged_at": "2026-05-09T22:54:49Z"
     },
