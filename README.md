@@ -1,7 +1,3 @@
-# InfraArtists
-
-[infraartists.com](https://infraartists.com) Is a personal website with my resume, portfolio, and blog posts on DevOps, Linux, cloud computing, and more.
-
 ## Open Source Contributions
 
 <!-- CONTRIBUTIONS:START -->
