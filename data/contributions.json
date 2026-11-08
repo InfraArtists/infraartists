@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T09:23:42Z",
+  "generated_at": "2026-11-08T09:40:26Z",
   "username": "infraartists",
   "count": 5,
   "contributions": [
@@ -10,7 +10,7 @@
       "repo": "oVirt/ovirt-engine",
       "repo_url": "https://github.com/oVirt/ovirt-engine",
       "repo_description": "The oVirt Engine virtualization manager",
-      "stars": 615,
+      "stars": 616,
       "language": "Java",
       "merged_at": "2026-05-12T07:03:53Z"
     },
@@ -21,7 +21,7 @@
       "repo": "prometheus-community/helm-charts",
       "repo_url": "https://github.com/prometheus-community/helm-charts",
       "repo_description": "Prometheus community Helm charts",
-      "stars": 6227,
+      "stars": 6228,
       "language": "Mustache",
       "merged_at": "2026-05-09T22:54:49Z"
     },
@@ -32,7 +32,7 @@
       "repo": "sentry-kubernetes/charts",
       "repo_url": "https://github.com/sentry-kubernetes/charts",
       "repo_description": "Easily deploy Sentry on your Kubernetes Cluster",
-      "stars": 1384,
+      "stars": 1385,
       "language": "Mustache",
       "merged_at": "2026-05-06T13:11:08Z"
     },
@@ -43,7 +43,7 @@
       "repo": "sentry-kubernetes/charts",
       "repo_url": "https://github.com/sentry-kubernetes/charts",
       "repo_description": "Easily deploy Sentry on your Kubernetes Cluster",
-      "stars": 1384,
+      "stars": 1385,
       "language": "Mustache",
       "merged_at": "2026-05-05T09:23:49Z"
     },
@@ -54,7 +54,7 @@
       "repo": "sentry-kubernetes/charts",
       "repo_url": "https://github.com/sentry-kubernetes/charts",
       "repo_description": "Easily deploy Sentry on your Kubernetes Cluster",
-      "stars": 1384,
+      "stars": 1385,
       "language": "Mustache",
       "merged_at": "2026-05-01T05:46:12Z"
     }
