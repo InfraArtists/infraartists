@@ -3,7 +3,7 @@
 <!-- CONTRIBUTIONS:START -->
 <!-- This section is auto-generated nightly by .github/workflows/update-contributions.yml — do not edit by hand. -->
 
-**6 merged PRs across 3 repos** · last refreshed Nov 10, 2026
+**6 merged PRs across 3 repos** · last refreshed Nov 11, 2026
 
 <details>
   <summary><a href="https://github.com/sentry-kubernetes/charts"><b>sentry-kubernetes/charts</b></a> — <sub>⭐ 1.4k · Mustache · 4 merged PRs</sub></summary>
