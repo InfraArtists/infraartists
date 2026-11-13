@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T10:26:50Z",
+  "generated_at": "2026-11-13T10:17:11Z",
   "username": "infraartists",
   "count": 6,
   "contributions": [
@@ -21,7 +21,7 @@
       "repo": "oVirt/ovirt-engine",
       "repo_url": "https://github.com/oVirt/ovirt-engine",
       "repo_description": "The oVirt Engine virtualization manager",
-      "stars": 618,
+      "stars": 617,
       "language": "Java",
       "merged_at": "2026-05-12T07:03:53Z"
     },
@@ -32,7 +32,7 @@
       "repo": "prometheus-community/helm-charts",
       "repo_url": "https://github.com/prometheus-community/helm-charts",
       "repo_description": "Prometheus community Helm charts",
-      "stars": 6229,
+      "stars": 6231,
       "language": "Mustache",
       "merged_at": "2026-05-09T22:54:49Z"
     },

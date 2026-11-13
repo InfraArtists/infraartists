@@ -3,7 +3,7 @@
 <!-- CONTRIBUTIONS:START -->
 <!-- This section is auto-generated nightly by .github/workflows/update-contributions.yml — do not edit by hand. -->
 
-**6 merged PRs across 3 repos** · last refreshed Nov 12, 2026
+**6 merged PRs across 3 repos** · last refreshed Nov 13, 2026
 
 <details>
   <summary><a href="https://github.com/sentry-kubernetes/charts"><b>sentry-kubernetes/charts</b></a> — <sub>⭐ 1.4k · Mustache · 4 merged PRs</sub></summary>
@@ -18,7 +18,7 @@
 </details>
 
 <details>
-  <summary><a href="https://github.com/oVirt/ovirt-engine"><b>oVirt/ovirt-engine</b></a> — <sub>⭐ 618 · Java · 1 merged PR</sub></summary>
+  <summary><a href="https://github.com/oVirt/ovirt-engine"><b>oVirt/ovirt-engine</b></a> — <sub>⭐ 617 · Java · 1 merged PR</sub></summary>
 
   > The oVirt Engine virtualization manager
 
