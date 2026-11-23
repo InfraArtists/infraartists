@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T10:28:45Z",
+  "generated_at": "2026-11-23T11:28:23Z",
   "username": "infraartists",
   "count": 6,
   "contributions": [
@@ -11,7 +11,7 @@
       "repo_url": "https://github.com/sentry-kubernetes/charts",
       "repo_description": "Easily deploy Sentry on your Kubernetes Cluster",
       "stars": 1387,
-      "language": "Mustache",
+      "language": "Go Template",
       "merged_at": "2026-11-09T14:03:38Z"
     },
     {
@@ -32,7 +32,7 @@
       "repo": "prometheus-community/helm-charts",
       "repo_url": "https://github.com/prometheus-community/helm-charts",
       "repo_description": "Prometheus community Helm charts",
-      "stars": 6234,
+      "stars": 6235,
       "language": "Mustache",
       "merged_at": "2026-05-09T22:54:49Z"
     },
@@ -44,7 +44,7 @@
       "repo_url": "https://github.com/sentry-kubernetes/charts",
       "repo_description": "Easily deploy Sentry on your Kubernetes Cluster",
       "stars": 1387,
-      "language": "Mustache",
+      "language": "Go Template",
       "merged_at": "2026-05-06T13:11:08Z"
     },
     {
@@ -55,7 +55,7 @@
       "repo_url": "https://github.com/sentry-kubernetes/charts",
       "repo_description": "Easily deploy Sentry on your Kubernetes Cluster",
       "stars": 1387,
-      "language": "Mustache",
+      "language": "Go Template",
       "merged_at": "2026-05-05T09:23:49Z"
     },
     {
@@ -66,7 +66,7 @@
       "repo_url": "https://github.com/sentry-kubernetes/charts",
       "repo_description": "Easily deploy Sentry on your Kubernetes Cluster",
       "stars": 1387,
-      "language": "Mustache",
+      "language": "Go Template",
       "merged_at": "2026-05-01T05:46:12Z"
     }
   ]
